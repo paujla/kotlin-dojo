@@ -1,0 +1,6 @@
+rootProject.name = 'kotlin-dojo'
+include 'checkpoint0'
+include 'checkpoint1'
+include 'checkpoint2'
+include 'checkpoint3'
+

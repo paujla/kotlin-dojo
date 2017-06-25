@@ -1,0 +1,6 @@
+The challenge of checkpoint0 is to convert the codebase from Java to Kotlin.
+
+The keystroke on IntelliJ to convert the codebase is:
+- on Mac: Cmd + Alt + Shift + K
+- on Win: Ctrl + Alt + Shift + K
+

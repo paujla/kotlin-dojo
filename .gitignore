@@ -1,0 +1,13 @@
+# Gradle
+.gradle/
+target/
+build
+# IntelliJ IDEA
+.idea/*
+!.idea/runConfigurations/
+!.idea/codeStyleSettings.xml
+out/
+
+logs/
+*.pid
+*.DS_Store
