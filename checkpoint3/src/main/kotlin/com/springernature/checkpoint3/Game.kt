@@ -1,7 +1,7 @@
 package com.springernature.checkpoint3
 
 import com.springernature.checkpoint3.Cell.*
-import java.util.*
+import java.util.Arrays.asList
 
 class Game(private val board: Board = Board(List(3, { List(3, { Empty }) })),
            private val currentPlayer: Cell = X) {
@@ -28,13 +28,12 @@ class Game(private val board: Board = Board(List(3, { List(3, { Empty }) })),
     val isGameADraw: Boolean
         get() = board.isBoardFull() && whichWinner() == null
 
-    fun whichWinner(): Cell? {
-        if (isASolutionFor(X))
-            return X
-        else if (isASolutionFor(O))
-            return O
-        else return null
-    }
+    fun whichWinner() =
+            if (isASolutionFor(X))
+                X
+            else if (isASolutionFor(O))
+                O
+            else null
 
     private fun isASolutionFor(cell: Cell) =
             solutions.fold(false, { acc, solution ->
@@ -48,13 +47,13 @@ class Game(private val board: Board = Board(List(3, { List(3, { Empty }) })),
     internal class InvalidMove(message: String) : Exception(message)
 }
 
-val solutions = Arrays.asList(
-        Arrays.asList(Pair(0, 0), Pair(0, 1), Pair(0, 2)),
-        Arrays.asList(Pair(1, 0), Pair(1, 1), Pair(1, 2)),
-        Arrays.asList(Pair(2, 0), Pair(2, 1), Pair(2, 2)),
-        Arrays.asList(Pair(0, 0), Pair(1, 0), Pair(2, 0)),
-        Arrays.asList(Pair(0, 1), Pair(1, 1), Pair(2, 1)),
-        Arrays.asList(Pair(0, 2), Pair(1, 2), Pair(2, 2)),
-        Arrays.asList(Pair(0, 0), Pair(1, 1), Pair(2, 2)),
-        Arrays.asList(Pair(2, 0), Pair(1, 1), Pair(0, 2))
+val solutions = asList(
+        asList(Pair(0, 0), Pair(0, 1), Pair(0, 2)),
+        asList(Pair(1, 0), Pair(1, 1), Pair(1, 2)),
+        asList(Pair(2, 0), Pair(2, 1), Pair(2, 2)),
+        asList(Pair(0, 0), Pair(1, 0), Pair(2, 0)),
+        asList(Pair(0, 1), Pair(1, 1), Pair(2, 1)),
+        asList(Pair(0, 2), Pair(1, 2), Pair(2, 2)),
+        asList(Pair(0, 0), Pair(1, 1), Pair(2, 2)),
+        asList(Pair(2, 0), Pair(1, 1), Pair(0, 2))
 )
