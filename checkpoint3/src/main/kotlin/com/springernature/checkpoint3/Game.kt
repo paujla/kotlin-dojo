@@ -29,31 +29,29 @@ class Game(private val board: Board = Board(List(3, { List(3, { Empty }) })),
         get() = board.isBoardFull() && whichWinner() == null
 
     fun whichWinner() =
-            if (isASolutionFor(X))
-                X
-            else if (isASolutionFor(O))
-                O
-            else null
+        if (isASolutionFor(X)) X
+        else if (isASolutionFor(O)) O
+        else null
 
     private fun isASolutionFor(cell: Cell) =
-            solutions.fold(false, { acc, solution ->
-                if (acc) {
-                    true
-                } else {
-                    board.all(solution, cell)
-                }
-            })
+        solutions.fold(false, { acc, solution ->
+            if (acc) {
+                true
+            } else {
+                board.all(solution, cell)
+            }
+        })
 
     internal class InvalidMove(message: String) : Exception(message)
 }
 
 val solutions = asList(
-        asList(Pair(0, 0), Pair(0, 1), Pair(0, 2)),
-        asList(Pair(1, 0), Pair(1, 1), Pair(1, 2)),
-        asList(Pair(2, 0), Pair(2, 1), Pair(2, 2)),
-        asList(Pair(0, 0), Pair(1, 0), Pair(2, 0)),
-        asList(Pair(0, 1), Pair(1, 1), Pair(2, 1)),
-        asList(Pair(0, 2), Pair(1, 2), Pair(2, 2)),
-        asList(Pair(0, 0), Pair(1, 1), Pair(2, 2)),
-        asList(Pair(2, 0), Pair(1, 1), Pair(0, 2))
+    asList(Pair(0, 0), Pair(0, 1), Pair(0, 2)),
+    asList(Pair(1, 0), Pair(1, 1), Pair(1, 2)),
+    asList(Pair(2, 0), Pair(2, 1), Pair(2, 2)),
+    asList(Pair(0, 0), Pair(1, 0), Pair(2, 0)),
+    asList(Pair(0, 1), Pair(1, 1), Pair(2, 1)),
+    asList(Pair(0, 2), Pair(1, 2), Pair(2, 2)),
+    asList(Pair(0, 0), Pair(1, 1), Pair(2, 2)),
+    asList(Pair(2, 0), Pair(1, 1), Pair(0, 2))
 )

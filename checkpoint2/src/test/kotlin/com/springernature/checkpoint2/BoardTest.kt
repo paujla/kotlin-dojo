@@ -19,27 +19,27 @@ class BoardTest {
 
     @Test fun `board is not full`() {
         val board = Board(asList(
-                asList(X, X, Empty),
-                asList(O, X, X),
-                asList(X, O, O)))
+            asList(X, X, Empty),
+            asList(O, X, X),
+            asList(X, O, O)))
 
         assertThat(board.isBoardFull(), equalTo(false))
     }
 
     @Test fun `board is full`() {
         val board = Board(asList(
-                asList(X, X, O),
-                asList(O, X, X),
-                asList(X, O, O)))
+            asList(X, X, O),
+            asList(O, X, X),
+            asList(X, O, O)))
 
         assertThat(board.isBoardFull(), equalTo(true))
     }
 
     @Test fun `contains the same cell in all the coordinates provided`() {
         val board = Board(asList(
-                asList(X, X, O),
-                asList(O, X, X),
-                asList(X, O, X)))
+            asList(X, X, O),
+            asList(O, X, X),
+            asList(X, O, X)))
         val actual = board.all(asList(Pair(0, 0), Pair(1, 1), Pair(2, 2)), X)
 
         assertThat(actual, equalTo(true))

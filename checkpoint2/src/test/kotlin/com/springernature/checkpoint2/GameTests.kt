@@ -14,11 +14,11 @@ class GameTests {
 
         assertThat(game.nextCellToPlace(), equalTo(X))
         assertThat(BoardRenderer(game.board()).render(), equalTo(
-                " | | \n" +
-                        "-----\n" +
-                        " | | \n" +
-                        "-----\n" +
-                        " | | \n"
+            " | | \n" +
+            "-----\n" +
+            " | | \n" +
+            "-----\n" +
+            " | | \n"
         ))
     }
 
@@ -28,11 +28,11 @@ class GameTests {
 
         assertThat(gameAfterMove.nextCellToPlace(), equalTo(O))
         assertThat(BoardRenderer(gameAfterMove.board()).render(), equalTo(
-                " | | \n" +
-                        "-----\n" +
-                        " |X| \n" +
-                        "-----\n" +
-                        " | | \n"
+            " | | \n" +
+            "-----\n" +
+            " |X| \n" +
+            "-----\n" +
+            " | | \n"
         ))
     }
 
@@ -45,14 +45,14 @@ class GameTests {
     fun `player try to make a move in a location already taken`() {
         val game = Game()
         game.makeMove(Move(0, 0), game.nextCellToPlace())
-                .makeMove(Move(0, 0), game.nextCellToPlace())
+            .makeMove(Move(0, 0), game.nextCellToPlace())
     }
 
     @Test fun `game is over`() {
         val game = Game(Board(asList(
-                asList(X, X, O),
-                asList(O, X, X),
-                asList(X, O, O))), X)
+            asList(X, X, O),
+            asList(O, X, X),
+            asList(X, O, O))), X)
 
         assertThat(game.isGameOver, equalTo(true))
     }

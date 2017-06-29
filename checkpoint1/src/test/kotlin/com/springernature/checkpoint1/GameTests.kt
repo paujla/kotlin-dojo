@@ -13,11 +13,11 @@ class GameTests {
 
         assertThat(game.nextCellToPlace(), equalTo(X))
         assertThat(BoardRenderer(game.board()).render(), equalTo(
-                " | | \n" +
-                        "-----\n" +
-                        " | | \n" +
-                        "-----\n" +
-                        " | | \n"
+            " | | \n" +
+            "-----\n" +
+            " | | \n" +
+            "-----\n" +
+            " | | \n"
         ))
     }
 
@@ -27,15 +27,16 @@ class GameTests {
 
         assertThat(gameAfterMove.nextCellToPlace(), equalTo(O))
         assertThat(BoardRenderer(gameAfterMove.board()).render(), equalTo(
-                " | | \n" +
-                        "-----\n" +
-                        " |X| \n" +
-                        "-----\n" +
-                        " | | \n"
+            " | | \n" +
+            "-----\n" +
+            " |X| \n" +
+            "-----\n" +
+            " | | \n"
         ))
     }
 
-    @Test(expected = Game.InvalidMove::class) fun `player makes invalid move`() {
+    @Test(expected = Game.InvalidMove::class)
+    fun `player makes invalid move`() {
         val game = Game()
         game.makeMove(Move(100, 100), X)
     }

@@ -9,9 +9,9 @@ class ConsoleUI {
 	private Game game;
 
 	ConsoleUI(Game game, FunctionThatThrows<String, IOException> in, Consumer<String> out) {
+		this.game = game;
 		this.in = in;
 		this.out = out;
-		this.game = game;
 	}
 
 	void run() {

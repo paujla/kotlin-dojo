@@ -25,6 +25,5 @@ class Game(private val board: Board = Board(List(3, { List(3, { Empty }) })),
     val isGameADraw: Boolean
         get() = false
 
-    // TODO implement later
     internal class InvalidMove(message: String) : Exception(message)
 }

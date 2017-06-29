@@ -39,5 +39,5 @@ class ConsoleUI(private var game: Game, private val `in`: () -> String? = ::read
     }
 
     private fun invalidInputMessage(s: String) =
-            "Invalid input '$s', please make sure it's zero-indexed 'x y' coordinates"
+        "Invalid input '$s', please make sure it's zero-indexed 'x y' coordinates"
 }
