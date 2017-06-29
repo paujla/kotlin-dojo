@@ -17,7 +17,7 @@ data class Board(private val grid: List<List<Cell>>) {
 
     val size = grid.size
 
-    fun isBoardFull() =
+    fun isFull() =
             grid.all { subList -> subList.all { it != Empty } }
 
     fun all(coordinates: List<Pair<Int, Int>>, cell: Cell) =

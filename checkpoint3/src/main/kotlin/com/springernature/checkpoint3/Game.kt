@@ -22,10 +22,10 @@ class Game(private val board: Board = Board(List(3, { List(3, { Empty }) })),
     fun nextCellToPlace() = currentPlayer
 
     val isGameOver: Boolean
-        get() = board.isBoardFull() || whichWinner() != null
+        get() = board.isFull() || whichWinner() != null
 
     val isGameADraw: Boolean
-        get() = board.isBoardFull() && whichWinner() == null
+        get() = board.isFull() && whichWinner() == null
 
     fun whichWinner() =
         if (isASolutionFor(X)) X

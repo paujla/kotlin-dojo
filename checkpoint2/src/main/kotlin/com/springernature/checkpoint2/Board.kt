@@ -20,7 +20,7 @@ data class Board(private val grid: List<List<Cell>>) {
         TODO("not implemented yet")
     }
 
-    fun isBoardFull(): Boolean {
+    fun isFull(): Boolean {
         TODO("not implemented yet")
     }
 }

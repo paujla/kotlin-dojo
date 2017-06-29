@@ -22,7 +22,7 @@ class BoardTest {
             listOf(O, X, X),
             listOf(X, O, O)))
 
-        assertThat(board.isBoardFull(), equalTo(false))
+        assertThat(board.isFull(), equalTo(false))
     }
 
     @Test fun `board is full`() {
@@ -31,7 +31,7 @@ class BoardTest {
             listOf(O, X, X),
             listOf(X, O, O)))
 
-        assertThat(board.isBoardFull(), equalTo(true))
+        assertThat(board.isFull(), equalTo(true))
     }
 
     @Test fun `contains the same cell in all the coordinates provided`() {
