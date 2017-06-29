@@ -5,7 +5,6 @@ import com.springernature.checkpoint2.Cell.X
 import org.hamcrest.core.IsEqual.equalTo
 import org.junit.Assert.assertThat
 import org.junit.Test
-import java.util.Arrays.asList
 
 class GameTests {
 
@@ -49,10 +48,10 @@ class GameTests {
     }
 
     @Test fun `game is over`() {
-        val game = Game(Board(asList(
-            asList(X, X, O),
-            asList(O, X, X),
-            asList(X, O, O))), X)
+        val game = Game(Board(listOf(
+            listOf(X, X, O),
+            listOf(O, X, X),
+            listOf(X, O, O))), X)
 
         assertThat(game.isGameOver, equalTo(true))
     }

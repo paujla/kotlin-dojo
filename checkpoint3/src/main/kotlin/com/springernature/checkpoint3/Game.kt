@@ -1,7 +1,6 @@
 package com.springernature.checkpoint3
 
 import com.springernature.checkpoint3.Cell.*
-import java.util.Arrays.asList
 
 class Game(private val board: Board = Board(List(3, { List(3, { Empty }) })),
            private val currentPlayer: Cell = X) {
@@ -45,13 +44,13 @@ class Game(private val board: Board = Board(List(3, { List(3, { Empty }) })),
     internal class InvalidMove(message: String) : Exception(message)
 }
 
-val solutions = asList(
-    asList(Pair(0, 0), Pair(0, 1), Pair(0, 2)),
-    asList(Pair(1, 0), Pair(1, 1), Pair(1, 2)),
-    asList(Pair(2, 0), Pair(2, 1), Pair(2, 2)),
-    asList(Pair(0, 0), Pair(1, 0), Pair(2, 0)),
-    asList(Pair(0, 1), Pair(1, 1), Pair(2, 1)),
-    asList(Pair(0, 2), Pair(1, 2), Pair(2, 2)),
-    asList(Pair(0, 0), Pair(1, 1), Pair(2, 2)),
-    asList(Pair(2, 0), Pair(1, 1), Pair(0, 2))
+val solutions = listOf(
+    listOf(Pair(0, 0), Pair(0, 1), Pair(0, 2)),
+    listOf(Pair(1, 0), Pair(1, 1), Pair(1, 2)),
+    listOf(Pair(2, 0), Pair(2, 1), Pair(2, 2)),
+    listOf(Pair(0, 0), Pair(1, 0), Pair(2, 0)),
+    listOf(Pair(0, 1), Pair(1, 1), Pair(2, 1)),
+    listOf(Pair(0, 2), Pair(1, 2), Pair(2, 2)),
+    listOf(Pair(0, 0), Pair(1, 1), Pair(2, 2)),
+    listOf(Pair(2, 0), Pair(1, 1), Pair(0, 2))
 )
